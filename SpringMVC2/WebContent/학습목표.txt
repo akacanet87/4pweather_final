@@ -1,0 +1,10 @@
+SpringMVC1 프로젝트 에서는 과거 2.x 버전에서 많이 사용했던 컨트롤러 및 매핑 방식
+
+SpringMVC2 에서는 매핑 방식을 
+DefaultAnnotationHandlerMapping 방식으로 개선하고
+xml 설정파일의 코드 수를 급격히 줄여보기
+&
+어플리케이션 전반에 걸쳐 사용되는 디버그 목적의 System.out.print() 와 같은 로그 작업을
+해당 객체에 일일이 기재하지 않고, 단 한번의 xml 설정으로 구현하기
+
+AOP를 적용하여!

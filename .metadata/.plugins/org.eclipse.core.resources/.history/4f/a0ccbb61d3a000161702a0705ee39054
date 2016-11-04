@@ -1,0 +1,110 @@
+package com.min.myquestion.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import com.min.domain.MyQuestion;
+
+@Repository
+public class MyQuestionDAOJdbc implements MyQuestionDAO{
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	@Override
+	public List<MyQuestion> selectLectureList(int member_id, int lecture_id) {
+		
+		String sql = "select * from myquestion where member_id=? and lecture_id=?";
+		
+		List<MyQuestion> list = jdbcTemplate.query(sql, new RowMapper<MyQuestion>(){
+
+			@Override
+			public MyQuestion mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				MyQuestion myQuestion = new MyQuestion();
+				
+				myQuestion.setMyquestion_id(rs.getInt("myquestion_id"));
+				myQuestion.setLecture_id(rs.getInt("lecture_id"));
+				myQuestion.setMember_id(rs.getInt("member_id"));
+				myQuestion.setWriter(rs.getString("writer"));
+				myQuestion.setContent(rs.getString("content"));
+				myQuestion.setTeam(rs.getInt("team"));
+				myQuestion.setRegdate(rs.getString("regdate"));
+				
+				return myQuestion;
+				
+			}
+			
+		}, member_id, lecture_id);
+		
+		return list;
+		
+	}
+
+	@Override
+	public List<MyQuestion> selectAll(int member_id ) {
+		
+		String sql = "select * from myquestion where member_id=?";
+		
+		List<MyQuestion> list = jdbcTemplate.query(sql, new RowMapper<MyQuestion>(){
+
+			@Override
+			public MyQuestion mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				MyQuestion myQuestion = new MyQuestion();
+				
+				myQuestion.setMyquestion_id(rs.getInt("myquestion_id"));
+				myQuestion.setLecture_id(rs.getInt("lecture_id"));
+				myQuestion.setMember_id(rs.getInt("member_id"));
+				myQuestion.setWriter(rs.getString("writer"));
+				myQuestion.setContent(rs.getString("content"));
+				myQuestion.setTeam(rs.getInt("team"));
+				myQuestion.setRegdate(rs.getString("regdate"));
+				
+				return myQuestion;
+				
+			}
+			
+		}, member_id );
+		
+		return list;
+		
+	}
+
+	@Override
+	public MyQuestion selectOne(int member_id, int myquestion_id ) {
+		
+		String sql = "select * from myquestion where membr_id=? and myquestion_id=?";
+		
+		MyQuestion myQuestion = jdbcTemplate.queryForObject(sql, new RowMapper<MyQuestion>(){
+
+			@Override
+			public MyQuestion mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				MyQuestion myQuestion = new MyQuestion();
+				
+				myQuestion.setMyquestion_id(rs.getInt("myquestion_id"));
+				myQuestion.setLecture_id(rs.getInt("lecture_id"));
+				myQuestion.setMember_id(rs.getInt("member_id"));
+				myQuestion.setWriter(rs.getString("writer"));
+				myQuestion.setContent(rs.getString("content"));
+				myQuestion.setTeam(rs.getInt("team"));
+				myQuestion.setRegdate(rs.getString("regdate"));
+				
+				return myQuestion;
+				
+			}
+			
+		}, member_id, myquestion_id);
+		
+		return null;
+		
+	}
+
+}

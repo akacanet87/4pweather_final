@@ -1,0 +1,58 @@
+package com.min.lecture.service;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.min.domain.Lecture;
+import com.min.domain.LectureCategory;
+import com.min.lecture.model.LectureDAO;
+import com.min.lecturecategory.model.LectureCategoryDAO;
+
+@Service
+public class LectureSerivceImpl implements LectureSerivce{
+
+	@Autowired
+	@Qualifier("lectureDAOJdbc")
+	private LectureDAO lectureDAO;
+	
+	@Autowired
+	@Qualifier("lectureCategoryDAOJdbc")
+	private LectureCategoryDAO lectureCategoryDAO;
+	
+	@Override
+	public List<Lecture> selectAll( int lecturecategory_id ) {
+		
+		List<Lecture> list = lectureDAO.selectAll(lecturecategory_id);
+		
+		return list;
+		
+	}
+
+	@Override
+	public Lecture selectOne( int lecture_id ) {
+		
+		Lecture lecture = lectureDAO.selectOne(lecture_id);
+		
+		return lecture;
+		
+	}
+
+	@Override
+	public String selectValues(int lecturecategory_id) {
+		
+		LectureCategory lectureCategory = lectureCategoryDAO.selectOne(lecturecategory_id);
+		
+		String ide = lectureCategory.getIde();
+		
+		HashMap<String, String> map = new HashMap<>();
+		map.put("", value)
+		
+		return ide;
+		
+	}
+
+}

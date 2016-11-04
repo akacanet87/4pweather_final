@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/" p:suffix=".jsp" />
+
+	<context:component-scan base-package="com.sds" />
+
+	<!-- 세션 매니저 등록 -->
+	<!-- <bean id="sessionManager" class="com.sds.model.connection.SessionManager" 
+		factory-method="getInstance"/> -->
+
+	<!-- 스프링이 지원하는 DB 연동 기술을 사용하려면 DataSource도 스프링이 얻어오도록 설정하기 resource-ref="true" 
+		인 경우 java:comp/env로 검색함 -->
+	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/oracle"
+		resource-ref="true" />
+
+	<!-- jdbc 관련 기술을 스프링에서 가공하여 스프링만의 api를 지원하는데 이 객체명이 JdbcTemplate이다. -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
+		p:dataSource-ref="dataSource" />
+
+	<!-- ibatis/mybatis 관련 기술을 스프링에서 가공해서 스프링 만의 api를 제공하는데 이 객체명이 SqlSessionTemplate 
+		이다. -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:dataSource-ref="dataSource" p:configLocation="classpath:com/sds/mybatis/config.xml" />
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean"></constructor-arg>
+	</bean>
+
+	<!-- 업로드 설정 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+</beans>

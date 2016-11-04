@@ -1,0 +1,25 @@
+package com.sds.exception;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		int[] arr = new int[1];
+		
+		try {
+			
+			System.out.println(arr[1]);
+			
+		} catch ( Exception e ) {
+			
+			/*System.out.println("배열을 제대로 써라");
+			e.getMessage();
+			e.printStackTrace();*/
+			
+			throw new CorrectArrayUseException("")
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- 3.x 이후로는 개발자가 핸들러 매핑을 명시하지 않으면 DefaultAnnotationHandlerMapping이 적용된다. -->
+	<context:component-scan base-package="com.sds"></context:component-scan>
+
+	<!-- ViewResolver 선택 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 커넥션 풀 객체 빈으로 등록 -->
+	<!-- <bean id="poolManager" class="com.sds.board.model.PoolManager"
+		factory-method="getInstance" /> -->
+	<!-- 싱글톤 메서드를 뉴 하지 못하게 만들려면 init-method를 쓴다 -->
+
+	<!-- 사용될 모델을 빈으로 등록 -->
+	<!-- <bean id="boardDAOJdbc" class="com.sds.board.model.BoardDAOJdbc">
+	</bean>
+	
+	<bean id="boardDAOMybatis" class="com.sds.board.model.BoardDAOMybatis">
+	</bean> -->
+
+	<!-- PagingManager 빈으로 등록 -->
+	<bean id="pagingManager" class="com.sds.common.board.PagingManager" />
+
+	<!-- 사용할 컨트롤러를 빈으로 등록 -->
+	<!-- <bean id="boardController'" class="com.sds.board.controller.BoardController">
+		<property name="boardDAO" ref="boardDAOMybatis" />
+		<property name="pm" ref="pagingManager" />
+	</bean> -->
+
+	<!-- 공통 관심 사항(cross cutting concern) 을 원하는 객체가 작동 시 실행시켜 보기 -->
+	<bean id="controllerLog" class="com.sds.common.logging.ControllerLog" />
+	<aop:config>
+		<aop:aspect id="logAspect" ref="controllerLog">
+			<aop:pointcut expression="execution(public * com.sds.board.controller..*(..))" id="controllerCut" />				<!-- expression="execution(public * *(..))" -->
+			<aop:around method="printMsg" pointcut-ref="controllerCut" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>

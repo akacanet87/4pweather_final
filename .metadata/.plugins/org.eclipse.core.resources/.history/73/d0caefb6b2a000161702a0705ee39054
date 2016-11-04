@@ -1,0 +1,5 @@
+package com.sds.model.board;
+
+public interface BoardDAOMybatis {
+
+}

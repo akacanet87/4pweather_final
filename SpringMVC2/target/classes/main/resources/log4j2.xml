@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">					<!-- 메세지 처리 방법 -->
+			<PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n" />		<!-- 메세지 처리 규칙 -->
+														<!-- 
+																d : 날짜
+																- : 왼쪽정렬
+																5p : 에러메세지의 레벨, 명시한 레벨 이상의 레벨은 다 찍힌다.(
+																	  fatal :
+																	  error :
+																	  warn : 실행은 되나 문제의 소지가 있다. 
+																	  info : 
+																	  debug : 개발자용 ) 
+																 t : 현재 실행부
+																 C : 해당 클래스
+																 m : 메세지
+																 n : 개행문자 
+																 -->
+		</Console>
+	</Appenders>
+	<Loggers>					<!-- 메세지 처리 방식 -->
+		<Root level="debug">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>

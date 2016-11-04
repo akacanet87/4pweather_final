@@ -1,0 +1,19 @@
+package com.min.myquestion.dao;
+
+import java.util.List;
+
+import com.min.domain.MyQuestion;
+
+public interface MyQuestionDAO {
+	public List selectAll();
+	public List<MyQuestion> selectAll( int member_id  );
+	public MyQuestion select(int myquestion_id);
+	public MyQuestion selectOne( int member_id, int myquestion_id );
+	public int insert(MyQuestion myQuestion);
+	public int delete(int myquestion_id);
+	public int update(MyQuestion myQuestion);
+	public List selectAllFromMember(int member_id);
+	public List selectAllFromLecture(int lecture_id);
+	public List<MyQuestion> selectListOfLecture( int member_id, int lecture_id );
+	public int getLastVal();
+}

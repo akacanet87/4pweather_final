@@ -1,0 +1,42 @@
+package com.min.myquestion.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.min.domain.MyQuestion;
+
+@Repository
+public class MyQuestionDAOJdbc implements MyQuestionDAO{
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	@Override
+	public List<MyQuestion> selectLectureList(int member_id, int lecture_id) {
+		
+		String sql = "select * from myquestion where member_id=? and lecture_id=?";
+		
+		
+		
+		return null;
+		
+	}
+
+	@Override
+	public List<MyQuestion> selectAll(int member_id, int lecture_id) {
+		
+		return null;
+		
+	}
+
+	@Override
+	public MyQuestion selectOne(int member_id, int lecture_id) {
+		
+		return null;
+		
+	}
+
+}

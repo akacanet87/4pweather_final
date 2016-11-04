@@ -1,0 +1,59 @@
+function registMyQuestion(myquestion_id){
+	if(!confirm("글을 등록하시겠습니까?")){
+		
+		return;
+		
+	}else{
+		
+		alert("등록되었습니다.");
+		
+	}
+		
+	
+	var registQuestion_id = {"myquestion_id" : myquestion_id};
+	console.log(registQuestion_id);
+	
+	$.ajax({
+    	method : 'post',
+		url : '/lecture/registquestion.do',
+		data : JSON.stringify(registQuestion_id),
+		contentType : 'application/json; charset=UTF-8',
+		success : function(data) {
+			location.href = "/lecture/player.do";
+		},
+		error : function(xhr, stat, err) {
+			console.log(err);
+		}
+	});
+}
+
+
+
+function deleteMyQuestion(myquestion_id){
+	if(!confirm("글을 등록하시겠습니까?")){
+		
+		return;
+		
+	}else{
+		
+		alert("등록되었습니다.");
+		
+	}
+		
+	
+	var registQuestion_id = {"myquestion_id" : myquestion_id};
+	console.log(registQuestion_id);
+	
+	$.ajax({
+    	method : 'post',
+		url : '/lecture/registquestion.do',
+		data : JSON.stringify(registQuestion_id),
+		contentType : 'application/json; charset=UTF-8',
+		success : function(data) {
+			location.href = "/lecture/player.do";
+		},
+		error : function(xhr, stat, err) {
+			console.log(err);
+		}
+	});
+}

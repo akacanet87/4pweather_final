@@ -1,0 +1,83 @@
+<%@page import="com.min.domain.LectureCategory"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%
+	List<LectureCategory> list = (List) request.getAttribute("lecturecategorylist");
+
+	out.print(list.size());
+%>
+<%@ include file="../inc/header.jsp"%>
+<div class="container">
+	<form name="form1" method="post">
+
+		<%-- <section>
+		<h1>수강중인 강의</h1>
+
+		<%
+			for (int a = 0; a < 2; a++) {
+		%>
+		<div class="classPack">
+			<div>
+				<a href="/min/lecture/list.jsp"><img class="lectureImg"
+					src="http://cfile209.uf.daum.net/image/26738E4455545EB41B36EA"></a>
+			</div>
+			<div>
+				<ul>
+					<li class="classDetail">강의구성 : 총 40강</li>
+					<li class="classDetail">강사 : 민진호</li>
+					<li class="classDetail">강좌 설명 : 객체지향 언어의 대표적인~~~</li>
+				</ul>
+			</div>
+		</div>
+		<%
+			}
+		%>
+
+	</section> --%>
+
+
+		<section>
+			<h2 style="margin-bottom: 20px; font-weight: 900;">강의 리스트</h2>
+
+			<%
+				for (int a = 0; a < list.size(); a++) {
+
+					LectureCategory lectureCategory = list.get(a);
+					String lectureCategoryTitle = lectureCategory.getTitle();
+					int lectureCategory_id = lectureCategory.getLectureCategory_id();
+			%>
+			<div class="row">
+				<div class="list-group-item active">
+					<h4 style="margin-bottom: 20px; font-weight: 700;"><%=lectureCategoryTitle%></h4>
+				</div>
+				<div class="col-md-4" style="margin-bottom: 20px;"
+					onClick="goList()">
+					<%-- <input type="hidden" name="lecturecategory_id" value="<%=lectureCategory_id%>">
+					<input type="hidden" name="title" value="<%=lectureCategoryTitle%>"> --%>
+					<a
+						href="/lecture/list.do?lecturecategory_id=<%=lectureCategory_id%>&<%=lectureCategoryTitle%>">
+						<%-- <img class="lectureImg" src="<%=lectureCategory.getSummaryimg()%>"> --%>
+						<img class="lectureImg" width="100%" height="300px" src="http://wearehacker.com/files/attach/images/42791/661/013/b09f88835e80326583d424da366bb040.gif">
+					</a>
+				</div>
+				<div class="col-md-8" style="margin-bottom: 20px;">
+					<div class="list-group">
+							<a href="#" class="list-group-item">강의구성 : 총 <%=lectureCategory.getNumOfLecture()%>강</a>
+							<a href="#" class="list-group-item">강      사 : <%=lectureCategory.getInstructor()%></a>
+							<a href="#" class="list-group-item">개발언어 : <%=lectureCategory.getInstructor()%></a>
+							<a href="#" class="list-group-item">개발환경 : <%=lectureCategory.getInstructor()%></a>
+							<a href="#" class="list-group-item">강좌설명 : <%=lectureCategory.getInstructor()%></a>
+							<a href="#" class="list-group-item">가      격 : <%=lectureCategory.getContent()%></a>
+					</div>
+				</div>
+			</div>
+			<%
+				}
+			%>
+
+		</section>
+
+	</form>
+</div>
+<%@ include file="../inc/footer.jsp"%>

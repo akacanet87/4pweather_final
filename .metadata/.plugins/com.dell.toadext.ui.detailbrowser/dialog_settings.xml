@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.dell.toadext.oracle.nui.viewer.detail.OraQueryResultViewer">
+		<section name="33f299b9-d1ca-4af1-9f4e-eceb1d88f3d0#REBOARD">
+		</section>
+		<section name="33f299b9-d1ca-4af1-9f4e-eceb1d88f3d0#BOARD">
+		</section>
+		<section name="33f299b9-d1ca-4af1-9f4e-eceb1d88f3d0#ASSET">
+		</section>
+		<section name="33f299b9-d1ca-4af1-9f4e-eceb1d88f3d0#MEMBER">
+		</section>
+	</section>
+</section>

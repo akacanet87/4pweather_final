@@ -1,0 +1,5 @@
+package com.sds.exception.spring;
+
+public class WriteException {
+
+}

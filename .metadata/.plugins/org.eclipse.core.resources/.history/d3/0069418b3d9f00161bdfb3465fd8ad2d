@@ -1,0 +1,33 @@
+package com.min.lecture.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.min.domain.Lecture;
+import com.min.lecture.model.LectureDAO;
+
+public class LectureSerivceImpl implements LectureSerivce{
+
+	@Autowired
+	@Qualifier("lectureDAOJdbc")
+	private LectureDAO lectureDAO;
+	
+	@Override
+	public List<Lecture> selectAll( int lecturecategory_id ) {
+		
+		List<Lecture> list = lectureDAO.selectAll(lecturecategory_id);
+		
+		return list;
+		
+	}
+
+	@Override
+	public Lecture selectOne( int lecture_id ) {
+		
+		return null;
+		
+	}
+
+}

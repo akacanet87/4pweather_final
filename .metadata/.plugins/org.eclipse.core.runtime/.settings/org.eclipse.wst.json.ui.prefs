@@ -1,0 +1,9 @@
+COMMENT=\#00ff80 | null | false | false | false | false
+OBJECT_KEY=\#00ffff | null | false | false | false | false
+VALUE_BOOLEAN=\#ff0080 | null | false | false | false | false
+VALUE_NULL=\#ff0080 | null | false | false | false | false
+VALUE_NUMBER=\#0394be | null | false | false | false | false
+VALUE_STRING=\#ff8000 | null | true | true | false | false
+eclipse.preferences.version=1
+org.eclipse.wst.json.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+suggestionStrategy=Lax

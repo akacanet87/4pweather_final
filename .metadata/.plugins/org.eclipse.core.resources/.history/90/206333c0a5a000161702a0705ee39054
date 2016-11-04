@@ -1,0 +1,40 @@
+package com.sds.common.logging;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.aspectj.lang.ProceedingJoinPoint;
+
+import com.sds.domain.Board;
+
+public class ControllerLog {
+	Logger logger=LogManager.getLogger(ControllerLog.class);
+	// debug < info < warn < error < fatal
+	
+	public Object printMsg(ProceedingJoinPoint joinPoint) {
+		Object obj=null;
+		//프록시가 요청을 낚아 챈 상태이므로, 
+		//핵심 비즈니스 로직을 호출해 줘야 한다
+		Object target=joinPoint.getTarget();
+		String className=target.getClass().getName();
+		
+		String methodName=joinPoint.getSignature().getName();
+		
+		//어떤 메서드의 매개변수인지는 우리가 알수없다!!
+		//Object[] args=joinPoint.getArgs();	
+		//Board board=(Board)args[0];		
+		try {
+			logger.debug(className+"의"+methodName+" 호출 전");
+			obj=joinPoint.proceed(); //go ahead!!
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}finally{
+			logger.debug(className+"의"+methodName+" 호출 후");
+		}
+		return obj;
+	}
+}
+
+
+
+
+

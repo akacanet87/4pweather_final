@@ -1,0 +1,18 @@
+1477821717054	Move 'context.xml' to 'WEB-INF'
+1477844847006	Copy package
+1477844943065	Copy package
+1477845033221	Rename package 'com.min.controller.board'
+1477845046788	Rename package 'com.min.controller.lecture'
+1477845071922	Rename package 'com.min.controller'
+1477845079565	Copy package
+1477845444506	Rename type 'LectureCategoryDAO'
+1477846714254	Delete element
+1477850120121	Rename resource 'lecture'
+1477852167533	Rename resource 'lectures'
+1477852541395	Copy folder
+1477852565412	Move 2 resources to 'WebContent'
+1477852996576	Delete element
+1477898419653	Copy compilation unit
+1477898460313	Copy compilation unit
+1477898469862	Rename type 'LectureSerivceImpl'
+1477900463513	Rename resource 'detail.jsp'

@@ -1,0 +1,28 @@
+package com.sds.controller.board;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/board/")
+public class BoardController {
+	
+	@RequestMapping("list.do")
+	public List selectAll(){
+		
+		System.out.println("selectAll »£√‚");
+		
+		return null;
+		
+	}
+	
+	@RequestMapping("write.do")
+	public String insert(){
+		
+		return "redirect:/board/list.do";
+		
+	}
+
+}

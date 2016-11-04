@@ -1,0 +1,18 @@
+1477529393675	Rename type 'MyClass'
+1477530862701	Move 'images' to 'WebContent'
+1477531327253	Delete element
+1477531827273	Rename type 'Dob'
+1477533888696	Copy file
+1477534109446	Delete element
+1477535209141	Rename type 'Logger'
+1477542455183	Delete element
+1477542531056	Delete element
+1477543734346	Rename type 'BoardDAO'
+1477543745425	Rename type 'Board'
+1477543757339	Rename type 'BoardService'
+1477543764229	Rename type 'BoardDAOJdbc'
+1477543953959	Rename package 'com.sds.controller.board'
+1477543962672	Rename type 'BoardController'
+1477543975339	Rename resource 'board'
+1477545202495	Copy compilation unit
+1477554323214	Copy package

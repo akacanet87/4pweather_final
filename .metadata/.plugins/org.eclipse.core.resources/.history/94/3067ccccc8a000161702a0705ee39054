@@ -1,0 +1,13 @@
+package com.min.domain;
+
+public class MyQuestion {
+	
+	private int myquestion_id;
+	private int lecture_id;
+	private int member_id;
+	private String writer;
+	private String content;
+	private int team;
+	private String regdate;
+
+}

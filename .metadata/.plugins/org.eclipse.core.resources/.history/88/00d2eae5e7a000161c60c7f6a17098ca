@@ -1,0 +1,28 @@
+function registMyQuestion(myquestion_id){
+	if(!confirm("글을 등록하시겠습니까?")){
+		
+		return;
+		
+	}else{
+		
+		alert("등록되었습니다.");
+		
+	}
+		
+	
+	var registQuestion_id = {"lecturecategory_id" : lecturecategory_id};
+	console.log(delete_id);
+	
+	$.ajax({
+    	method : 'post',
+		url : '/admin/deleteoneleccat.do',
+		data : JSON.stringify(delete_id),
+		contentType : 'application/json; charset=UTF-8',
+		success : function(data) {
+			location.href = "/admin/listleccat.do";
+		},
+		error : function(xhr, stat, err) {
+			console.log(err);
+		}
+	});
+}

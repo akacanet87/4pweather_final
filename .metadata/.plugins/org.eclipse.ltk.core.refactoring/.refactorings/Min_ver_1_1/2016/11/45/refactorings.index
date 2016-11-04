@@ -1,0 +1,24 @@
+1477998807425	Delete element
+1478000020988	Rename package 'com.min.domain'
+1478000029011	Rename package 'com.min.lecturecategory.model'
+1478000034716	Rename package 'com.min.lecture.model'
+1478000070050	Rename package 'com.min.model.domain'
+1478064475046	Rename package 'com.min.mycomment.dao'
+1478064486588	Rename type 'MyComment'
+1478064534359	Rename type 'MyQuestion'
+1478064637086	Rename type 'LectureTest'
+1478064884555	Delete element
+1478081671349	Rename resource 'deliverData'
+1478082675234	Delete element
+1478156434389	Delete element
+1478173914015	Copy package
+1478173938568	Copy package
+1478173967789	Copy package
+1478174013335	Delete element
+1478174026231	Delete element
+1478174261618	Rename type 'LectureCategoryDAOJdbc'
+1478174277143	Rename type 'MyQuestionDAOJdbc'
+1478174284869	Rename type 'LectureDAOJdbc'
+1478222151779	Copy packages
+1478222794402	Copy package
+1478225466347	Copy folder

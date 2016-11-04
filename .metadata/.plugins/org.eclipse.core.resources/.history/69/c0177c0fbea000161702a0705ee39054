@@ -1,0 +1,13 @@
+package com.min.lecturetest.dao;
+
+import java.util.List;
+
+import com.min.domain.LectureTest;
+
+public interface LectureTestDAO {
+	
+	public List<LectureTest> selectAll();
+	public LectureTest selectOne( int lecturetest_id );
+	public Boolean isRight( int isright );
+
+}

@@ -1,0 +1,89 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.List"%>
+<%@page import="com.min.domain.LectureCategory"%>
+<%@page import="com.min.domain.Lecture"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%
+	List<Lecture> lecturelist = (List) request.getAttribute("lecturelist");
+	LectureCategory lectureCategory = (LectureCategory) request.getAttribute("lectureCategory");
+
+	out.print(lecturelist);
+	out.print(lectureCategory);
+%>
+<%@ include file="../inc/header.jsp"%>
+<div>
+	<section>
+		<a href="/lecture/index.do"><input type="button" value="Back"
+			id="btnBack"></a>
+		<h1><%=lectureCategory.getTitle()%></h1>
+	</section>
+	<section>
+		<div>
+			<%
+				if (lectureCategory.getIsSummary() == 0) {
+			%>
+			<div class="media">
+				<div class="media-left media-middle">
+					<a href="#"> <img class="media-object" height="200px"
+						class="lectureTitle1"
+						src="/data/img/lec_cat/<%=lectureCategory.getSummaryimg()%>"
+						alt="...">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">Middle aligned media</h4>
+					...
+				</div>
+			</div>
+			<%
+				} else {
+			%>
+			<div class="col-md-12" style="margin-bottom: 20px;">
+				<div class="page-header"><%=lectureCategory.getImg()%></div>
+			</div>
+			<%
+				}
+			%>
+		</div>
+	</section>
+
+	<section>
+		<%
+			for (int a = 0; a < lecturelist.size(); a++) {
+				Lecture lecture = lecturelist.get(a);
+				int lecture_id = lecture.getLecture_id();
+				int lectureNum = a + 1;
+		%>
+		<div>
+			<div>
+				<a
+					href="/lecture/player.do?lecture_id=<%=lecture_id%>&title=<%=lectureCategory.getTitle()%>&lectureNum=<%=lectureNum%>"><img
+					class="lectureTitle1"
+					src="/data/img/lec_cat/<%=lecture.getThumbnail()%>"> </a>
+			</div>
+			<div>
+				<ul>
+					<li>목차 : <%=lectureNum%>강
+					</li>
+					<li>주제 : <%=lecture.getTitle()%></li>
+					<li>개발환경 : <%=lectureCategory.getIde()%></li>
+					<li>내용 : <%=lecture.getContent()%></li>
+					<%-- <li>관련 태그 : <%=lecture.get %></li> --%>
+				</ul>
+			</div>
+			<div>
+				<div>
+					<img class="stamp"
+						src="http://image.shutterstock.com/display_pic_with_logo/450076/141568954/stock-vector-vector-completed-stamp-141568954.jpg">
+				</div>
+				<div>취득점수(7/10)</div>
+			</div>
+		</div>
+		<%
+			}
+		%>
+
+	</section>
+</div>
+<%@ include file="../inc/footer.jsp"%>

@@ -1,0 +1,7 @@
+package com.min.myquestion.service;
+
+public interface MyQuestionService {
+	
+	
+
+}

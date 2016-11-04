@@ -1,0 +1,18 @@
+package com.min.domain;
+
+public class Lecture {
+	
+	private int lecturecategory_id;
+	private String title;
+	private String instructor;
+	private String content;
+	private String summary;
+	private String img;
+	private String summaryimg;
+	private int rank;
+	private String lang;
+	private String ide;
+	private int price;
+
+
+}

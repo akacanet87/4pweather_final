@@ -1,0 +1,25 @@
+package com.sds.exception;
+
+public class DBTest {
+
+	public DBTest() {
+	
+	
+	
+	}
+	
+	public void test(){
+		
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		DBTest dbTest =  new DBTest();
+		
+		dbTest.test();
+		
+	}
+	
+}

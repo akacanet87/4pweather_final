@@ -1,0 +1,7 @@
+package com.min.lecturecategory.model;
+
+public interface LectureCategoryDAO {
+	
+	
+
+}

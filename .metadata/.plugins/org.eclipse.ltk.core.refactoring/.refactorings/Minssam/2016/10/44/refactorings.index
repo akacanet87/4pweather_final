@@ -1,0 +1,51 @@
+1477281548812	Delete element
+1477476475958	Rename type 'Member'
+1477476617619	Rename type 'Member'
+1477476695550	Delete element
+1477492811834	Rename package 'com.min.member.model'
+1477492839147	Copy package
+1477493073775	Copy package
+1477493338264	Copy package
+1477493357481	Copy package
+1477493368752	Copy package
+1477493379179	Copy package
+1477493390857	Copy package
+1477493431781	Copy package
+1477493609405	Copy compilation unit
+1477493625837	Rename type 'BoardDAO'
+1477493636552	Copy compilation unit
+1477493637583	Copy compilation unit
+1477493638268	Copy compilation unit
+1477493639728	Copy compilation unit
+1477493640541	Copy compilation unit
+1477493641189	Copy compilation unit
+1477493641809	Copy compilation unit
+1477493661368	Rename type 'BoardDAO'
+1477494139726	Rename type 'BoardDAO'
+1477494152936	Rename type 'BoardDAO'
+1477494183803	Rename type 'BoardDAO'
+1477494193888	Rename type 'BoardDAO'
+1477494204547	Rename type 'BoardDAO'
+1477494213970	Rename type 'BoardDAO'
+1477548910636	Rename package 'com.min.model.board'
+1477548920411	Rename package 'com.min.model.boardcategory'
+1477548927732	Rename package 'com.min.model.enrolledlecture'
+1477548934761	Rename package 'com.min.model.lecture'
+1477548942379	Rename package 'com.min.model.lecturecategory'
+1477548949532	Rename package 'com.min.model.lecturetest'
+1477548956511	Rename package 'com.min.model.member'
+1477548964970	Rename package 'com.min.model.membercategory'
+1477548971859	Rename package 'com.min.model.myquestion'
+1477552256002	Move 'context.xml' to 'WEB-INF'
+1477553573511	Delete element
+1477553598408	Delete element
+1477554332936	Rename package 'com.sds.common.board'
+1477558938387	Delete elements
+1477560927889	Rename package 'com.min.service.model'
+1477560989028	Rename package 'com.min.chargeservice.model'
+1477561015178	Copy package
+1477561039217	Rename type 'ChargeService'
+1477575072217	Rename package 'com.sds.common.manager'
+1477622719005	Rename package 'com.min.board.controller'
+1477640148101	Rename resource 'config.xml'
+1477640155662	Delete element

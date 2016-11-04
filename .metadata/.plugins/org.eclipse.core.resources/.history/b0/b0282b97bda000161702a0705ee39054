@@ -1,0 +1,10 @@
+package com.min.lecturetest.dao;
+
+import java.util.List;
+
+public interface LectureTestDAO {
+	
+	public List<LectureCategory> selectAll();
+	public LectureCategory selectOne( int lecturecategory_id );
+
+}

@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Fri Nov 04 15:37:49 KST 2016
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\CANET\\.m2\\repository\\org\\springframework\\spring-web\\4.3.3.RELEASE\\spring-web-4.3.3.RELEASE.jar=WEB-INF/lib/spring-web-4.3.3.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\CANET\\.m2\\repository\\org\\springframework\\spring-web\\4.3.0.RELEASE\\spring-web-4.3.0.RELEASE.jar=WEB-INF/lib/spring-web-4.3.0.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\CANET\\.m2\\repository\\org\\springframework\\spring-web\\4.2.5.RELEASE\\spring-web-4.2.5.RELEASE.jar=WEB-INF/lib/spring-web-4.2.5.RELEASE.jar

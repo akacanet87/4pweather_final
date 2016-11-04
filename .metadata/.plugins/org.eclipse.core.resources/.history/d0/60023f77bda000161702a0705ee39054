@@ -1,0 +1,5 @@
+package com.min.lecturetest.dao;
+
+public interface LectureTest {
+
+}

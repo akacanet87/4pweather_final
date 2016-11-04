@@ -1,0 +1,28 @@
+package com.min.lecturecategory.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.min.domain.LectureCategory;
+import com.min.lecturecategory.model.LectureCategoryDAO;
+
+@Service
+public class LectureCategorySerivceImpl implements LectureCategoryService{
+
+	@Autowired
+	@Qualifier("lectureCategoryDAOJdbc")
+	private LectureCategoryDAO lectureCategoryDAO;
+	
+	@Override
+	public List<LectureCategory> selectAll() {
+		
+		List<LectureCategory> list = 
+		
+		return ;
+		
+	}
+
+}

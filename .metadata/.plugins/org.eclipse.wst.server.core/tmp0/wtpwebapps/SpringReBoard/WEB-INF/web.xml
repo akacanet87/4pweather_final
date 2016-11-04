@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+
+	<!-- 스프링으로 응용프로그램 개발 시 사용했던 ApplicationContext는 Spring MVC에서 명시하지 않아도 각 
+		서블릿에서 생성시키며 관리 된다. 각 서블릿이 관리하는 AC에 등록된 Bean들은 서로 접근이 불가능하다. AC간의 공유해야할 Bean(주로 
+		비즈니스 로직 객체들 : Service, DAO 등) 이 있더라도 공유가 불가하다. 해결책) AC 관리 객체의 생명력, 접근 가능 
+		범위 수준을 보다 높이기 위해 ServletContext가 관리하도록 하기 -->
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<context-param>			<!--  -->
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:com/sds/model/context/service.xml</param-value>
+	</context-param>
+
+
+	<!-- 인코딩 필터 처리는 요청을 받기 전에 해야 하므로 servlet mapping을 하기 전에 해야 함 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>		<!-- 해당 서블릿만 쓸 수 있는 것 -->
+			<param-name>contextConfigLocation</param-name>
+			<param-value>WEB-INF/context.xml</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+</web-app>

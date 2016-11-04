@@ -1,0 +1,5 @@
+package com.sds.controller.board;
+
+public class BoardController {
+
+}

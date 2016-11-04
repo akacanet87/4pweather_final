@@ -1,0 +1,31 @@
+1477806725640	Copy compilation unit
+1477806866849	Copy compilation unit
+1477808650037	Delete element
+1477808653463	Delete element
+1477813271390	Delete element
+1477816001854	Delete element
+1477818348054	Delete element
+1477821383843	Copy file
+1477821865316	Rename resource 'min'
+1477821895597	Rename resource 'ssam'
+1477821915067	Rename package 'com.min.board.model'
+1477821920209	Rename package 'com.min.board.service'
+1477821924374	Rename package 'com.min.boardcategory.model'
+1477821928714	Rename package 'com.min.charge.service'
+1477821933225	Rename package 'com.min.comments.model'
+1477821938487	Rename package 'com.min.common.manager'
+1477821943199	Rename package 'com.min.controller.board'
+1477821947997	Rename package 'com.min.controller.lecturecategory'
+1477821952767	Rename package 'com.min.domain'
+1477821956010	Rename package 'com.min.enrolledlecture.model'
+1477821963474	Rename package 'com.min.lecture.model'
+1477821971010	Rename package 'com.min.lecturecategory.model'
+1477821976137	Rename package 'com.min.lecturetest.model'
+1477821983115	Rename package 'com.min.manager.service'
+1477821988399	Rename package 'com.min.member.model'
+1477821993718	Rename package 'com.min.membercategory.model'
+1477821999272	Rename package 'com.min.mybatis'
+1477822003408	Rename package 'com.min.myquestion.model'
+1477822007566	Rename package 'com.min.service.lecturecategory'
+1477845571244	Copy folders
+1477853032456	Copy compilation unit
