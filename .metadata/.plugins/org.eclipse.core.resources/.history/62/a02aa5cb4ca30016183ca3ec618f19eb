@@ -149,7 +149,7 @@
 
 					<Resource auth="Container" driverClassName="org.mariadb.jdbc.Driver"
 						maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/mariadb"
-						password="" type="javax.sql.DataSource" url="jdbc:mariadb://localhost:3306/mvc"
+						password="" type="javax.sql.DataSource" url="jdbc:mariadb://localhost:3306/min"
 						username="root" />
 
 				</Context>

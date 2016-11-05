@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="Min"/>
 <aop-project name="MinSsaem"/>
+<aop-project name="Min_ver_1_1"/>
 <aop-project name="SpringException"/>
 <aop-project name="SpringReBoard">
 <aspect-definition advice-class-name="com.sds.common.log.MyLogger" advice-method-name="printMsg" advice-type="AROUND" aspect-end-line-number="30" aspect-name="myLogger" aspect-start-line-number="30" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/SpringReBoard/WebContent/WEB-INF/context.xml" pointcut-expression="execution(public * com.sds.controller..*Controller.*(..))" proxy-target-class="false">
